@@ -26,6 +26,20 @@
           }
         }
 
+        @keyframes gate {
+          0% {
+            transform: scale(2);
+            left: 40em;
+            top: -25em;
+          }
+
+          100% {
+            transform: scale(1);
+            left: 0;
+            top: -1em;
+          }
+        }
+
 
         body {
           margin: 0;
@@ -41,6 +55,7 @@
         .cloud {
           overflow: hidden;
           z-index: 100;
+          position: absolute;
         }
 
         .cloud-img {
@@ -56,12 +71,10 @@
         .gate-img {
           width: 100%;
           height: auto;
-          position: relative;
-          bottom: 50em;
-        }
-
-        .gate {
-          z-index: 1000;
+          position: absolute;
+          left: 40em;
+          top: -25em;
+          transform: scale(2);
         }
       </style>
     <!-- end styling -->
@@ -72,8 +85,6 @@
       <div class="main-div">
         <div class="cloud">
           <img src="<?= $cloud ?>" alt="" class="img cloud-img">
-        </div>
-        <div class="gate">
           <img src="<?= $gate ?>" alt="" class="img gate-img">
         </div>
       </div>
@@ -88,6 +99,11 @@
             "animation": "cloud 1.5s cubic-bezier(0.74, 0, 0.19, 1)",
             "-webkit-animation": "cloud 1.5s forwards"
           });
+
+          $('.gate-img').css({
+            "animation": "gate 1.5s cubic-bezier(0.74, 0, 0.19, 1)",
+            "-webkit-animation": "gate 1.5s forwards"
+          })
 
 
         })
