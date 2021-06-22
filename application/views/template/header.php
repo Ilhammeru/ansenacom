@@ -20,6 +20,11 @@
           --newyork-heavy-italic: "Newyork-heavy-italic";
           --newyork-heavy: "Newyork-heavy";
           --newyork-bold: "Newyork-bold";
+          --newyork-bold-italic: "Newyork-bold-italic";
+          --newyork-large-heavy: "Newyork-large-heavy";
+          --newyork-large-bold: "Newyork-large-bold";
+          --newyork-large-regular: "Newyork-large-regular";
+          --shorelines-bold: "shorelines-bold";
         }
         /* end variable */
 
@@ -40,9 +45,9 @@
 
         @keyframes gate {
           0% {
-            transform: scale(2);
-            left: 40em;
-            top: -25em;
+            transform: scale(2.5);
+            left: 63em;
+            top: -35em;
           }
 
           100% {
@@ -58,6 +63,7 @@
           padding: 0;
           width: 100%;
           max-width: 100%;
+          overflow: hidden;
         }
 
         .main-div {
@@ -83,10 +89,9 @@
           width: 100%;
           height: auto;
           position: absolute;
-          left: 40em;
-          top: -25em;
-          transform: scale(2);
-          background-color: rgba(0,0,0,0.5);
+          left: 63em;
+          top: -35em;
+          transform: scale(2.5);
         }
 
         .text-cloud {
@@ -94,7 +99,7 @@
           height: 5em;
           position: absolute;
           top: 9em;
-          left: 8em;
+          left: 4em;
           background: transparent;
           overflow-y: hidden;
           /* background: red; */
@@ -105,7 +110,7 @@
           height: 5em;
           position: absolute;
           top: 14.5em;
-          left: 8em;
+          left: 4em;
           background: transparent;
           overflow-y: hidden;
           /* background: blue; */
@@ -116,7 +121,7 @@
           height: 5em;
           position: absolute;
           top: 19em;
-          left: 8em;
+          left: 4em;
           background: transparent;
           overflow-y: hidden;
           /* background: blue; */
@@ -127,7 +132,7 @@
           height: 5em;
           position: absolute;
           top: 24.5em;
-          left: 8em;
+          left: 4em;
           background: transparent;
           overflow-y: hidden;
           /* background: blue; */
@@ -138,7 +143,7 @@
           height: 5em;
           position: absolute;
           top: 29.6em;
-          left: 8em;
+          left: 4em;
           background: transparent;
           overflow-y: hidden;
           /* background: blue; */
@@ -169,7 +174,7 @@
         }
 
         .p-cloud-1 {
-          font-family: var(--newyork-heavy);
+          font-family: var(--newyork-large-bold);
         }
 
         .p-cloud-2,
@@ -179,7 +184,7 @@
         }
 
         .p-cloud-3 {
-          font-family: var(--newyork-heavy);
+          font-family: var(--newyork-large-bold);
         }
 
         .ansena-gif {
@@ -206,18 +211,133 @@
           overflow: hidden;
         }
 
-        .p-slide {
+        .p-slide,
+        .p-slide-1,
+        .p-slide-2,
+        .p-slide-3 {
           position: relative;
           top: 0;
           right: 20em;
           transition: cubic-bezier(0.74, 0, 0.19, 1) 1500ms;
         }
 
-        .p-slide > p {
+        .p-slide > p,
+        .p-slide-1 > p,
+        .p-slide-2 > p,
+        .p-slide-3 {
           font-family: var(--montserrat-light);
           color: #fff;
           font-size: 0.9em;
           text-align: right;
+        }
+
+        .p-slide-1 > p,
+        .p-slide-2 > p {
+          font-family: var(--montserrat-medium);
+        }
+
+        .p-slide-3 > p {
+          padding: 0;
+          margin: 0;
+        }
+
+        .overlay {
+          width: 100%;
+          height: 100vh;
+          background-color: rgba(0,0,0,0.3);
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: ease 1.5s;
+          opacity: 0;
+        }
+
+        .click {
+          width: 100%;
+          height: 100vh;
+          background: transparent;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .header {
+          position: absolute;
+          top: -5em;
+          left: 0;
+          right: 0;
+          background: #fff;
+          z-index: 11000;
+          display: flex;
+          padding: 0 4em;
+          transition: ease-in-out .8s;
+        }
+
+        .menu {
+          width: 100%;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+        }
+
+        .menu > ul {
+          display: flex;
+        }
+
+        .menu > ul > li {
+          list-style: none;
+          margin: 0 2em;
+          cursor: pointer;
+          font-family: var(--montserrat-light);
+          transition: ease .5s;
+        }
+
+        .logo {
+          position: absolute;
+          top: 0.5em;
+        }
+
+        .logo > img {
+          width: 38px;
+          height: auto;
+        }
+
+        .nav-active {
+          letter-spacing: 5px;
+        }
+
+        .arrow {
+          text-align: center;
+          position: absolute;
+          bottom: 36px;
+          left: 0;
+          right: 0;
+          z-index: 1000000;
+          background: red;
+          padding: 0.5em 0;
+        }
+
+        .div-arrow {
+          height: 25px;
+          width: 25px;
+          background-color: #fff;
+          border-radius: 50%;
+          display: inline-block;
+          padding: 8px;
+          transition: ease .2s;
+          cursor: pointer;
+          margin: 1em;
+        }
+
+        .div-arrow > img {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+
+        .div-arrow:hover {
+          transform: scale(1.3);
         }
       </style>
     <!-- end styling -->
@@ -225,10 +345,25 @@
   <body>
 
     <section>
+      <nav class="header">
+        <div class="logo">
+          <img src="<?= base_url('assets/images/ANSENA.png') ?>" alt="">
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li class="nav-active">Home</li>
+            <li>About</li>
+            <li>Service</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </nav>
       <div class="main-div">
         <div class="cloud">
           <img src="<?= $cloud ?>" alt="" class="img cloud-img">
           <img src="<?= $gate ?>" alt="" class="img gate-img">
+          <div class="overlay"></div>
 
           <div class="text">
 
@@ -270,29 +405,66 @@
               <div class="p-slide">
                 <p>Standing out like the metal plane, staying strong like the concrete</p>
               </div>
+
+              <div class="p-slide-1">
+                <p>
+                  Ansena brings out the best in each on of our souls, and offers more than just experience:
+                </p>
+              </div>
+
+              <div class="p-slide-2">
+                <p>
+                  a good life
+                </p>
+              </div>
+
+              <div class="p-slide-3">
+                <p>
+                  We grow bigger.
+                </p>
+                <p>
+                  And make you bigger to
+                </p>
+              </div>
             </div>
 
           </div>
+          <!-- end div text -->
 
         </div>
+        <!-- end div cloud -->
+
+        <!-- <div class="arrow">
+          <div class="div-arrow">
+            <img src="<?= base_url('assets/images/Arrow.png') ?>" alt="">
+          </div>
+        </div> -->
+
       </div>
+      <!-- end main div -->
+
+      <div class="click"></div>
     </section>
 
     <script type="text/javascript">
       $(document).ready(function() {
-        $('.gate-img').click((e) => {
+        $('.click').click((e) => {
           e.preventDefault();
 
           $('.cloud-img').css({
             "animation": "cloud 1.5s cubic-bezier(0.74, 0, 0.19, 1)",
-            "-webkit-animation": "cloud 1.5s forwards"
+            "animation-fill-mode": "forwards"
           });
 
           $('.gate-img').css({
             "transition-timing-function": "ease-in-out;",
             "animation": "gate 1.5s cubic-bezier(0.74, 0, 0.19, 1)",
-            "-webkit-animation": "gate 1.5s forwards"
+            "animation-fill-mode": "forwards"
           })
+
+          $('.overlay').css({
+            "opacity": "1"
+          });
 
 
           $('.p-help').css({
@@ -334,6 +506,30 @@
               "right": "0"
             });
           },100);
+
+          setTimeout(() => {
+            $('.p-slide-1').css({
+              "right": "0"
+            });
+          },150);
+
+          setTimeout(() => {
+            $('.p-slide-2').css({
+              "right": "0"
+            });
+          },150);
+
+          setTimeout(() => {
+            $('.p-slide-3').css({
+              "right": "0"
+            });
+          },250);
+
+          setTimeout(() => {
+            $('.header').css({
+              "top": "0"
+            });
+          },250);
 
         })
       })
